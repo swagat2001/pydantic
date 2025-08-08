@@ -1,0 +1,1 @@
+- Pydantic provide us some custome data types that we can use to validate our data.
