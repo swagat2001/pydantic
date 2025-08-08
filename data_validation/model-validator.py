@@ -39,9 +39,9 @@ def update_patient_db(patient:Patient):
     print(patient.contact_details)
     
     
-patient_info = {'name':'Swagat','email':'abc@gmail.com','age':24,'weight':65,
+patient_info = {'name':'Swagat','email':'abc@gmail.com','age':61,'weight':65,
                 'married':False,'allergies':['dust'],
-                'contact_details':{'phone':'998877'}}
+                'contact_details':{'phone':'998877', 'emergency':'999947475'}}
 patient1 = Patient(**patient_info)
 
 insert_patient_db(patient1)
