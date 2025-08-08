@@ -7,7 +7,7 @@ class Patient(BaseModel):
     name:str
     age:int
     weight:float
-    married:bool
+    married:bool = False # Default value for married is False
     allergies:Optional[List[str]] = None # This allows allergies to be optional
     # If allergies are not provided, it defaults to None
     contact_details:Dict[str,str]
@@ -33,7 +33,6 @@ def update_patient_db(patient:Patient):
     
     
 patient_info = {'name':'Swagat','age':24,'weight':65,
-                'married':False,
                 'contact_details':{'email':'abc@gmail.com','phone':'998877'}}
 patient1 = Patient(**patient_info)
 
