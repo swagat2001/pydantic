@@ -28,9 +28,47 @@ class Patient(BaseModel):
 - Field function also use to attach metadata to the field, such as a description or example value. So that the programmer understand what the function is doing.
 - Useful at building API documentation, as it provides additional context for each field.
 
-** Field validator **
+# ** Field validator **
+- field validator is used to validate the data of a specific field in a Pydantic model.
+- It allows us to define custom validation logic for a specific field in a Pydantic model.
+```python
+
+from pydantic import BaseModel,EmailStr,field_validator
+from typing import List,Dict
 
 
+class Patient(BaseModel):
+    
+    name:str
+    email:EmailStr
+    age:int
+    weight:float
+    married:bool
+    allergies:List[str]  # This validate that the entries are in this is string store as a list
+    contact_details:Dict[str,str]
+    
+    
+    # if the email is allowed for specific domain only then we can use field_validator as below
+    @field_validator('email')
+    @classmethod
+    def email_validator(cls, value):
+        
+        valid_domain = ['hdfc.com','icici.com']
+        domain_name = value.split('@')[-1]
+        
+        if domain_name not in valid_domain:
+            raise ValueError(f"{domain_name} is Not a valid domain")
+        return value
+
+# rest code
+```
+- It is used to validate the data of a specific field in a Pydantic model.
+- It allows us to define custom validation logic for a specific field in a Pydantic model.
+
+# **Model validator**
+
+- Model validator is used to validate the data of the entire Pydantic model.
+- It allows us to define custom validation logic for the entire Pydantic model.
 
 
 
