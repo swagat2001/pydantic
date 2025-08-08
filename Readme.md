@@ -1,8 +1,8 @@
 This repository contains practical examples demonstrating the usage of **Pydantic** for type validation and data validation in Python.  
 The examples are organized into two main sections:
 
-- ** Type Validation ** – Demonstrates how to enforce and validate types using Pydantic models.
-- ** Data Validation ** – Covers various ways to validate and process data, including advanced Pydantic features.
+- __Type Validation__ – Demonstrates how to enforce and validate types using Pydantic models.
+- __Data Validation__ – Covers various ways to validate and process data, including advanced Pydantic features.
 
 ---
 
@@ -108,12 +108,5 @@ print(user.dict())
 * [Pydantic Documentation](https://docs.pydantic.dev/)
 * [Python Typing Module](https://docs.python.org/3/library/typing.html)
 
----
-
-## 📝 License
-
-This repository is licensed under the MIT License.
-
-```
 
 
