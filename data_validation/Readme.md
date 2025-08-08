@@ -28,7 +28,7 @@ class Patient(BaseModel):
 - Field function also use to attach metadata to the field, such as a description or example value. So that the programmer understand what the function is doing.
 - Useful at building API documentation, as it provides additional context for each field.
 
-
+** Field validator **
 
 
 
