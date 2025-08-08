@@ -126,6 +126,38 @@ insert_patient_db(patient1)
 
 
 
+# **nested models:**
+- Pydantic allows us to define nested models, which are models that contain other models as fields.
+- Better organization and structure of complex data.
+- Reusability: Use vitals in multiple models without duplicating code.
+- readability: Makes the code more readable and maintainable by breaking down complex data structures into smaller, manageable components.
+- Validation: Pydantic automatically validates nested models, ensuring that the data adheres to the defined schema.
+
+```python
+
+from pydantic import BaseModel
+
+class Address(BaseModel):
+    city: str
+    state: str
+    pin: str
+
+class Patient(BaseModel):
+    name: str
+    gender: str
+    age: int
+    address: Address
+    
+address_dict = {'city': 'Balasore','state':'odisha','pin':'756001'}
+address1 = Address(**address_dict)
+
+patient_info = {'name': 'Swagat', 'gender':'male','age': 24, 'address': address1}
+patient1 = Patient(**patient_info)
+
+print(patient1)
+```
+
+
 
 
 
