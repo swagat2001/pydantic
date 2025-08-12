@@ -28,7 +28,7 @@ class Patient(BaseModel):
 - Field function also use to attach metadata to the field, such as a description or example value. So that the programmer understand what the function is doing.
 - Useful at building API documentation, as it provides additional context for each field.
 
-# ** Field validator **
+# **Field validator**
 - field validator is used to validate the data of a specific field in a Pydantic model.
 - It allows us to define custom validation logic for a specific field in a Pydantic model.
 ```python
